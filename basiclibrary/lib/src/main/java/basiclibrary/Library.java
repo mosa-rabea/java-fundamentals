@@ -28,6 +28,23 @@ int[] array={4,5,6,5,};
 
         System.out.println("Minimum avg array " + Arrays.toString(minAvgArray(weeklyMonthTemperatures)));
 
+        System.out.println(analyzingWeatherData(weeklyMonthTemperatures));
+
+
+        List<String> votes = new ArrayList<>();
+        votes.add("Bush");
+        votes.add("Bush");
+        votes.add("Bush");
+        votes.add("Shrub");
+        votes.add("Hedge");
+        votes.add("Shrub");
+        votes.add("Bush");
+        votes.add("Hedge");
+        votes.add("Bush");
+
+
+        String winner = tally(votes);
+        System.out.println(winner + " The winner");
     }
 
 
@@ -83,7 +100,55 @@ int[] array={4,5,6,5,};
         }
         return otherArray;
     }
+    public static String analyzingWeatherData(int[][] arr){
+        int max = arr[0][0] ;
+        int min = arr[0][0];
+       HashSet<Integer> temp=new HashSet<Integer>();
 
+        for (int[] parents : arr) {
+            for (int child : parents) {
+                if (child > max) {
+                    max = child;
+                }
+                if (child < min) {
+                    min = child;
+                }
+                temp.add(child);
+            }
+        }
+        String neverSawTemp = "";
+        for (int i = min; i < max; i++) {
+            if (!temp.contains(i)){
+                neverSawTemp+= ("\nnever saw temperature "+i);
+            }
+        }
+
+        System.out.println("Maximum temperature: " + max);
+        System.out.println("Minimum temperature: " + min);
+
+        return neverSawTemp;
+    }
+
+    public static String tally(List<String> votes){
+        HashMap<String,Integer> newVotes = new HashMap<String,Integer>();
+        String winner = "";
+        int maxVotes = 0;
+
+        for (String vote : votes) {
+            if (!newVotes.containsKey(vote)) {
+                newVotes.put(vote, 1);
+            } else {newVotes.put(vote ,newVotes.get(vote)+1 );
+
+            }
+        }
+        for (Map.Entry<String, Integer> entry : newVotes.entrySet()){
+            if (entry.getValue() > maxVotes){
+                maxVotes = entry.getValue();
+                winner = entry.getKey();
+            }
+        }
+        return winner;
+    }
 
 
 
