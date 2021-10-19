@@ -9,21 +9,7 @@ public class Shop {
     private ArrayList<Review> reviews= new ArrayList<Review>();
 
 
-    public Shop(String name , String description , int dollarSigns){
-        this.name = name;
-        this.description = description;
-        for (int i = 0; i < dollarSigns; i++) {
-            this.dollarSigns+="$";
-        }
-    }
 
-    public void shopReview(String auther , String body , float stars){
-        Review newReview = new Review(auther , body , stars);
-        this.reviews.add(newReview);
-        this.starsSum+= newReview.getStars();
-        this.stars= this.starsSum/ this.reviews.size();
-
-    }
 
     public String getName() {
         return name;
@@ -66,16 +52,7 @@ public class Shop {
         this.reviews = reviews;
     }
 
-    @Override
-    public String toString() {
-        return "Shop{" +
-                "name='" + name + '\'' +
-                ", description='" + description + '\'' +
-                ", stars=" + stars +
-                ", dollarSigns='" + dollarSigns + '\'' +
-                ", reviews=" + reviews +
-                '}';
-    }
+
 
 
 }

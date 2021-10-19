@@ -7,31 +7,7 @@ public class Review {
     private String movie;
 
 
-    public Review(String auther , String body , float stars ){
-        if (stars > 5){
-            this.stars = 5;
-        }else if (stars < 0){
-            this.stars=0;
-        }else{
-            this.stars = stars;
-        }
 
-        this.auther = auther;
-        this.body = body;
-    }
-    public Review(String auther  ,String body , float stars ,String movie){
-        if (stars > 5){
-            this.stars = 5;
-        }else if (stars < 0){
-            this.stars=0;
-        }else{
-            this.stars = stars;
-        }
-
-        this.auther = auther;
-        this.body = body;
-        this.movie =movie;
-    }
 
     public String getBody() {
         return body;
@@ -65,9 +41,5 @@ public class Review {
         this.movie = movie;
     }
 
-    @Override
-    public String toString() {
-        return auther+" ( said: "+body+", "+
-                "and rate it with =" + stars+" stars " ;
-    }
+
 }

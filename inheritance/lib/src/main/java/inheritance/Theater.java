@@ -11,40 +11,10 @@ public class Theater {
     private float starsSum =0;
     private float stars;
 
-    public Theater(String name ){
-        this.name= name;
-    }
 
-    public void addMovie (String movie){
-        this.movies.add(movie);
-    }
-    public void removeMovie (String movie){
-        for (int i = 0; i < this.movies.size(); i++) {
-            if (movies.get(i).equals(movie)){
-                movies.remove(i);
-                break;
-            }
-        }
-    }
 
-    public void addReview(String auther , String body , float stars){
-        String newRevew="";
-        Review newReview = new Review(auther , body , stars);
-        newRevew= newReview + "";
-        this.reviews.add(newRevew);
-        this.starsSum+= newReview.getStars();
-        this.stars= this.starsSum/ this.reviews.size();
-    }
-    public void addReview(String auther , String body , float stars ,String movie){
-        String newRevModified="";
-        Review newReview = new Review(auther  , body , stars  ,movie);
-        newRevModified =newReview +",movie name: "+ newReview.getMovie()+")";
 
-        this.reviews.add(newRevModified);
 
-        this.starsSum+= newReview.getStars();
-        this.stars= this.starsSum/ this.reviews.size();
-    }
 
 
 
@@ -62,13 +32,5 @@ public class Theater {
     }
 
 
-    @Override
-    public String toString() {
-        return "Theater{" +
-                "name='" + name + '\'' +
-                ", stars=" + stars +
-                ", movies="+ movies+
-                ", reviews=" + reviews +
-                '}';
-    }
+
 }
