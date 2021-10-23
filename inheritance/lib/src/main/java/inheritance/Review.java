@@ -5,16 +5,16 @@ public class Review {
     private  String author;
     private int numberOfStars;
 
-    public Review(String rate , String author , int starsNum){
+    public Review(String rate , String author , int numberOfStars){
         this.rate = rate;
         this.author = author;
 
-        if(starsNum >= 5){
+        if(numberOfStars >= 5){
             this.numberOfStars =5;
-        }else if(starsNum < 0){
+        }else if(numberOfStars < 0){
             this.numberOfStars = 0;
         }else {
-            this.numberOfStars = starsNum;
+            this.numberOfStars = numberOfStars;
         }
 
     }
