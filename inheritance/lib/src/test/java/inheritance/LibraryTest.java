@@ -12,6 +12,29 @@ class LibraryTest {
         assertTrue(classUnderTest.someLibraryMethod(), "someLibraryMethod should return 'true'");
     }
 
-  
+
+    @Test void RestaurantName(){
+        Restaurant restaurant = new Restaurant("Mac" ,5,5);
+        assertEquals("The restaurant name: Mac The rates : 5.0  The price category: 5.0$", restaurant.toString());
+    }
+
+    @Test void RestaurantReview(){
+        Review review = new Review("good","Mosa",4);
+        assertEquals("The author :  Mosa, The rates :  4, The notes: good", review.toString());
+    }
+
+    @Test void Reviews(){
+        Restaurant restaurant = new Restaurant("Mac" ,3,4);
+
+        Review firstReview = new Review("good","Mosa",5);
+        Review secondReview = new Review("good","Ahmad",5);
+
+
+        restaurant.addReviews(firstReview);
+        restaurant.addReviews(secondReview);
+
+
+        assertEquals("[The author :  Mosa, The rates :  5, The notes: good, The author :  Ahmad, The rates :  5, The notes: good]",restaurant.getReviews().toString());
+    }
 
 }
