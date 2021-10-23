@@ -11,6 +11,19 @@ public class Library {
     public static void main(String[] args) {
 
 
+        Restaurant restaurant = new Restaurant("Mac" , 5,5);
+        System.out.println(restaurant);
+
+
+        Review firstReview = new Review("good","Mosa",5);
+        Review secondReview = new Review("good","Ahmad",4);
+
+        restaurant.addReviews(firstReview);
+        restaurant.addReviews(secondReview);
+
+        System.out.println(restaurant.getReviews());
+
+
     }
 
 }

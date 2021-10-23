@@ -1,45 +1,29 @@
 package inheritance;
 
 public class Review {
-    private String body;
-    private String auther;
-    private float stars;
-    private String movie;
+    private  String rate;
+    private  String author;
+    private int numberOfStars;
 
+    public Review(String rate , String author , int starsNum){
+        this.rate = rate;
+        this.author = author;
 
+        if(starsNum >= 5){
+            this.numberOfStars =5;
+        }else if(starsNum < 0){
+            this.numberOfStars = 0;
+        }else {
+            this.numberOfStars = starsNum;
+        }
 
-
-    public String getBody() {
-        return body;
     }
 
-    public void setBody(String body) {
-        this.body = body;
+    public int getStarsNum(){
+        return numberOfStars;
     }
 
-    public String getAuther() {
-        return auther;
+    public String toString(){
+        return "The author : " + " " + author +  "," + " The rates : " + " " + numberOfStars + "," + " The notes: " + rate;
     }
-
-    public void setAuther(String auther) {
-        this.auther = auther;
-    }
-
-    public float getStars() {
-        return stars;
-    }
-
-    public void setStars(float stars) {
-        this.stars = stars;
-    }
-
-    public String getMovie() {
-        return movie;
-    }
-
-    public void setMovie(String movie) {
-        this.movie = movie;
-    }
-
-
 }

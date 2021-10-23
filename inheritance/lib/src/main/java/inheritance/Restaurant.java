@@ -1,48 +1,46 @@
 package inheritance;
-import java.util.ArrayList;
-import java.util.List;
+
+import java.util.LinkedList;
+
 public class Restaurant {
+
     private String name;
-    private float stars;
-    private float priceCat;
-    private float starsSum=0;
-    private int reviewscounter=0;
-    private ArrayList<Review> reviews= new ArrayList<Review>();
+    private float numberOfStars;
+    private float  priceCategory;
 
 
 
-    public ArrayList<Review> getReviews() {
+    public Restaurant(String name, float numberOfStars , float priceCategory){
+        this.name = name;
+        this.numberOfStars = numberOfStars;
+        this.priceCategory =priceCategory;
+
+    }
+
+    LinkedList<Review> reviews = new LinkedList<>();
+
+    public  LinkedList <Review> getReviews(){
         return reviews;
     }
 
-    public void setReviews(ArrayList<Review> reviews) {
-        this.reviews = reviews;
+    public void addReviews(Review reviews){
+        this.reviews.add(reviews);
+        update();
     }
 
-    public String getName() {
-        return name;
+
+    public void update(){
+        float stars =0;
+        for (int i=0; i<getReviews().size(); i++){
+            stars += getReviews().get(i).getStarsNum();
+        }
+        stars = stars/ (getReviews().size());
+        this.numberOfStars = stars;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public String toString(){
+        return "The restaurant name: " +  name + " " + "The rates : " + numberOfStars + " " + " The price category: " + priceCategory + "$";
     }
-
-    public float getStars() {
-        return stars;
-    }
-
-    public void setStars(float stars) {
-        this.stars = stars;
-    }
-
-    public float getPriceCat() {
-        return priceCat;
-    }
-
-    public void setPriceCat(float priceCat) {
-        this.priceCat = priceCat;
-    }
-
 
 
 }
