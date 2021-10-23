@@ -37,4 +37,49 @@ class LibraryTest {
         assertEquals("[The author :  Mosa, The rates :  5, The notes: good, The author :  Ahmad, The rates :  5, The notes: good]",restaurant.getReviews().toString());
     }
 
+    @Test void shopReviews(){
+        Shop shop = new Shop("Alban AL Rabea" ,5,5,"Clean and Clear");
+
+
+        Review ahmadReview = new Review(" great","Ahmad",5);
+
+
+        shop.addReviews(ahmadReview);
+
+
+        assertEquals("\nShop name: Alban AL Rabea"+"\n"+
+        " Rates : 5.0"+"\n"+
+        "price category: 5.0$\n"+
+        " description :Clean and Clear"+"\n"+
+        " Review : [The author :  Ahmad, The rates :  5, The notes:  great]"+"\n", shop.toString());
+
+    }
+
+    @Test void TheaterReviews(){
+        Theater theater = new Theater("AL Hamra" ,4,3);
+
+
+        theater.addMovie("Twilight");
+
+
+        Review mosaReview = new Review("I love the place more than story ^_^","Mosa",5);
+
+
+        theater.addReviews(mosaReview);
+
+        System.out.println(theater);
+
+        assertEquals("\nTheater Name : AL Hamra\n" +
+                ",The Rates : 5.0\n" +
+                "The Movies for today : [Twilight]\n" +
+                "Review :[" +
+                "The author :  Mosa," +
+                " The rates :  5," +
+                " The notes: I love the place more than story ^_^]\n"
+               , theater.toString());
+
+    }
+
+
+
 }

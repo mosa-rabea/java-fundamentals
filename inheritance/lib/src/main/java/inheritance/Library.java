@@ -11,17 +11,51 @@ public class Library {
     public static void main(String[] args) {
 
 
-        Restaurant restaurant = new Restaurant("Mac" , 5,5);
-        System.out.println(restaurant);
+//        Restaurant restaurant = new Restaurant("Mac" , 5,5);
+//        System.out.println(restaurant);
+//
+//
+//        Review firstReview = new Review("good","Mosa",5);
+//        Review secondReview = new Review("good","Ahmad",4);
+//
+//        restaurant.addReviews(firstReview);
+//        restaurant.addReviews(secondReview);
+//
+//        System.out.println(restaurant.getReviews());
+//
 
 
-        Review firstReview = new Review("good","Mosa",5);
-        Review secondReview = new Review("good","Ahmad",4);
+        // Shop
+        Shop shop = new Shop("Alban AL Rabea" ,5,5,"Clean and Clear");
 
-        restaurant.addReviews(firstReview);
-        restaurant.addReviews(secondReview);
 
-        System.out.println(restaurant.getReviews());
+        Review ahmadReview = new Review(" great","Ahmad",5);
+
+
+        shop.addReviews(ahmadReview);
+
+
+
+
+        System.out.println(shop);
+
+        // Theater
+
+        Theater theater = new Theater("AL Hamra" ,4,3);
+
+
+        theater.addMovie("Twilight");
+
+
+        Review mosaReview = new Review("I love the place more than story ^_^","Mosa",5);
+
+
+        theater.addReviews(mosaReview);
+
+        System.out.println(theater);
+
+
+
 
 
     }
